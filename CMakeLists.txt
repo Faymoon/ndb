@@ -18,6 +18,8 @@ set(NDB_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 set(NDB_BIN_ROOT ${NDB_ROOT}/bin)
 set(THIRD_PARTY_ROOT ${NDB_ROOT}/third_party)
 
+set(NDB_PQ_PATH "C:/PostgreSQL/pg10")
+
 option(NDB_ENGINE_SQLITE "Build sqlite" ${NDB_ENGINE_SQLITE})
 option(NDB_ENGINE_MONGO "Build mongo" ${NDB_ENGINE_MONGO})
 option(NDB_ENGINE_POSTGRE "Build postgresql" ${NDB_ENGINE_POSTGRE})
@@ -73,7 +75,6 @@ target_include_directories(lib_ndb INTERFACE
         ${THIRD_PARTY_ROOT}/mpl/src
         ${NDB_ENGINE_INCLUDE})
 target_link_libraries(lib_ndb INTERFACE ${NDB_ENGINE_LIB} ${NDB_LIB})
-
 
 #-------------------------------------------------------
 #                        SUBDIRS

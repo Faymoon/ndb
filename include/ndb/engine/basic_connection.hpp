@@ -3,7 +3,6 @@
 
 #include <ndb/engine/connection_param.hpp>
 
-#include <sqlite3.h>
 #include <memory>
 
 namespace ndb

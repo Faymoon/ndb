@@ -1,8 +1,8 @@
 #ifndef ENGINE_BASIC_H_NDB
 #define ENGINE_BASIC_H_NDB
 
+#include <ndb/engine/basic_connection.hpp>
 #include <ndb/engine/connection_param.hpp>
-#include <ndb/engine/sqlite/connection.hpp>
 
 #include <unordered_map>
 

@@ -1,5 +1,5 @@
 #include <ndb/initializer.hpp>
-#include <ndb/engine/sqlite/sqlite.hpp> // engine
+#include <ndb/engine/postgre/postgre.hpp> // engine
 #include <ndb/preprocessor.hpp> // database macros
 #include <ndb/function.hpp> // ndb::clear
 #include <ndb/query.hpp> // query and expression
@@ -22,7 +22,7 @@ ndb_table(music,
 ndb_model(library, movie, music)
 
 ndb_project(my_project,
-            ndb_database(library, library, ndb::sqlite)
+            ndb_database(library, library, ndb::postgre)
 )
 
 // alias
@@ -38,7 +38,7 @@ int main()
 
     try
     {
-        ndb::initializer<ndb::sqlite> init;
+        ndb::initializer<ndb::postgre> init;
         //! connect to database library
         ndb::connect<dbs::library>();
         //! clear movie table
@@ -60,6 +60,6 @@ int main()
         }
     }
     catch (const std::exception& e) { std::cout << e.what(); }
-
+	std::getchar();
     return 0;
 }
